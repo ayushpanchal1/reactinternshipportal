@@ -13,7 +13,7 @@ Made using MERN stack
 **Step 4:** Open a terminal in the server folder, then execute the command 
 ```npm i```
 
-**Step 6:** Create a file named ```.env``` in the server folder, open the file and create a variable inside named ```MONGO_URI```. Set its value as your mongodb connection credentials. The file should now look something like, ```MONGO_URI=mongodb+srv:// .......```
+**Step 5:** Create a file named ```.env``` in the server folder, open the file and create a variable inside named ```MONGO_URI```. Set its value as your mongodb connection credentials. The file should now look something like, ```MONGO_URI=mongodb+srv:// .......```
 
 **Step 6:** In the same terminal, execute the following command to start the api server
 ```npm start```

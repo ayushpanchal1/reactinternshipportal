@@ -34,14 +34,14 @@ function App() {
       </nav>
       <br/>
 
-      <Container>
-        <Row className="vh-100 d-flex justify-content-center align-items-center">
+      <Container style={{marginTop: '100px'}}>
+        <Row className="d-flex justify-content-center align-items-center">
           <Col md={8} lg={10} xs={12}>
           <div className="border border-2 border-primary"></div>
             <Card className="shadow px-4">
               <h1><br/><b>Internship Management Portal</b></h1>
               <h2>
-                By Ayush, Pranjal and Yashi
+                By Ayush Panchal
                 <br/><br/><br/>
               </h2>
               <h2>

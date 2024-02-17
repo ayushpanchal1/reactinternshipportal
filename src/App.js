@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route,} from 'react-router-dom';
 import Login from './pages/Login'
-import Register from './pages/Register'
+import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
 import Homepage from './pages/Homepage'
 import Notifs from './pages/Notifs'
@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/" exact element={<Homepage/>} />
           <Route path="/login" exact element={<Login/>} />
           <Route path="/adminlogin" exact element={<AdminLogin/>} />
-          <Route path="/register" exact element={<Register/>} />
+          <Route path="/Signup" exact element={<Signup/>} />
           <Route path="/dashboard" exact element={<RequireAuth loginPath='/login'><Dashboard/></RequireAuth>} />
           <Route path="/notifications" exact element={<RequireAuth loginPath='/login'><Notifs/></RequireAuth>} />
           <Route path="/submitinternship" exact element={<RequireAuth loginPath='/login'><SubmitInternship/></RequireAuth>} />

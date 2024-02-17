@@ -1,13 +1,15 @@
+
 import React from 'react'
 import Navbar from './components/Navbar'; // Import the Navbar component
-import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
 
 function App() {
-  
+
   return (
     <div>
-      <Navbar /> {/* Using the Navbar component here */}
-      <LoginForm />
+      <Navbar /> {/* Use the Navbar component here */}
+      {/* <br/><br/><br/><br/><br/> */}
+      <SignupForm />
     </div>
   );
 }

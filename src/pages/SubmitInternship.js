@@ -6,48 +6,49 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { useSignOut } from 'react-auth-kit';
 import { useAuthUser } from 'react-auth-kit';
+import CNavbar from './components/CNavbar';
 
 function App() {
-    const auth = useAuthUser()
-    const Email = auth().email
-    const Session = auth().session
+  const auth = useAuthUser()
+  const Email = auth().email
+  const Session = auth().session
 
-    const [FirstName, setFirstName] = useState('')
-    const [LastName, setLastName] = useState('')
-    const [Password, setPassword] = useState('')
-    const [AcademicYear, setAcademicYear] = useState('')
-    const [MotherName, setMotherName] = useState('')
-    const [FatherName, setFatherName] = useState('')
-    const [MobileNo, setMobileNo] = useState('') 
+  const [FirstName, setFirstName] = useState('')
+  const [LastName, setLastName] = useState('')
+  const [Password, setPassword] = useState('')
+  const [AcademicYear, setAcademicYear] = useState('')
+  const [MotherName, setMotherName] = useState('')
+  const [FatherName, setFatherName] = useState('')
+  const [MobileNo, setMobileNo] = useState('')
 
 
-    const [Provider, setProvider] = useState('')
-    const [FromDuration, setFromDuration] = useState('')
-    const [ToDuration, setToDuration] = useState('')
-    const [WhatFor, setWhatFor] = useState('')
-    const [Domain, setDomain] = useState('')
-    
-    console.log(Email)
+  const [Provider, setProvider] = useState('')
+  const [FromDuration, setFromDuration] = useState('')
+  const [ToDuration, setToDuration] = useState('')
+  const [WhatFor, setWhatFor] = useState('')
+  const [Domain, setDomain] = useState('')
 
-    const signOut = useSignOut();
-    const navigate = useNavigate();
+  console.log(Email)
 
-    function logout() {
-        signOut();
-        navigate("/login");
+  const signOut = useSignOut();
+  const navigate = useNavigate();
+
+  function logout() {
+    signOut();
+    navigate("/login");
+  }
+
+  useEffect(() => {
+    //Runs on every render
+    getuserdata()
+    if (Session === "admin") {
+      logout()
     }
-    
-    useEffect(() => {
-      //Runs on every render
-      getuserdata()
-      if(Session==="admin"){
-        logout()
-      }
-    });
+  });
 
-    //this works?????
-    async function getuserdata() {
-      const response = await fetch('http://localhost:1337/api/getuser', {
+  //this works?????
+  async function getuserdata() {
+    const response = await fetch('http://localhost:1337/api/getuser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -68,84 +69,57 @@ function App() {
     setFatherName(data.fathername)
     setMobileNo(data.mobileno)
 
+  }
+
+  async function submitint(event) {
+    event.preventDefault()
+
+    const stuname = `${FirstName} ${LastName}`
+
+    const response = await fetch('http://localhost:1337/api/subintern', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        Email,
+        stuname,
+        Provider,
+        FromDuration,
+        ToDuration,
+        WhatFor,
+        Domain,
+      }),
+    })
+
+    const data = await response.json()
+
+    console.log(data)
+
+    if (data.error) {
+      alert("Error ocurred while posting!")
+    } else {
+      alert("Submitted!")
     }
 
-    async function submitint(event) {
-        event.preventDefault()
-        
-        const stuname = `${FirstName} ${LastName}`
-    
-        const response = await fetch('http://localhost:1337/api/subintern', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            Email,
-            stuname,
-            Provider,
-            FromDuration,
-            ToDuration,
-            WhatFor,
-            Domain,
-          }),
-        })
-    
-        const data = await response.json()
-    
-        console.log(data)
-        
-        if (data.error){
-          alert("Error ocurred while posting!")
-        } else {
-          alert("Submitted!")
-        }
-        
-    
-      }
+
+  }
 
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand navbar-dark bg-primary">
-        <Link to="/dashboard" className="navbar-brand">
-          &nbsp;Internship Management Portal
-        </Link>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to={"/dashboard"} className="nav-link">
-              Dashboard
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/submitinternship"} className="nav-link">
-              Submit
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/notifications"} className="nav-link">
-              Notifications
-            </Link>
-          </li>
-          <li className="nav-item">
-            <button onClick={logout} className="nav-link">
-              Sign out
-            </button>
-          </li>
-        </div>
-      </nav>
-      <br/><br/>
+      <CNavbar />
 
-      <Container>
+      <Container style={{ marginTop: '50px' }}>
         <Row className="vh-100 d-flex justify-content-center align-items-center">
           <Col md={8} lg={10} xs={12}>
-          <div className="border border-2 border-primary"></div>
+            <div className="border border-2 border-primary"></div>
             <Card className="shadow px-4">
               <Card.Body>
                 <div className="mb-3 mt-md-4">
                   <h2 className="fw-bold mb-2 text-center text-uppercase ">Enter details about completed internship</h2>
                   <div className="mb-3">
                     <Form onSubmit={submitint}>
-                      <br/>
+                      <br />
                       <Form.Group className="mb-3" controlId="Provider">
                         <Form.Label className="text-center">
                           Whom was the internship provided by?
@@ -154,24 +128,24 @@ function App() {
                       </Form.Group>
 
                       <div className='d-flex'>
-                      <Form.Group className="col md-4" controlId="FromDuration">
-                        <Form.Label className="text-center">
-                          From
-                        </Form.Label>
-                        <Form.Control value={FromDuration} onChange={(e) => setFromDuration(e.target.value)} type="date" />
-                      </Form.Group>
+                        <Form.Group className="col md-4" controlId="FromDuration">
+                          <Form.Label className="text-center">
+                            From
+                          </Form.Label>
+                          <Form.Control value={FromDuration} onChange={(e) => setFromDuration(e.target.value)} type="date" />
+                        </Form.Group>
 
-                      <Form.Group className="col-md-1" controlId="">
-                      </Form.Group>
+                        <Form.Group className="col-md-1" controlId="">
+                        </Form.Group>
 
-                      <Form.Group className="col md-4" controlId="ToDuration">
-                        <Form.Label className="text-center">
-                          To
-                        </Form.Label>
-                        <Form.Control value={ToDuration} onChange={(e) => setToDuration(e.target.value)} type="date" />
-                      </Form.Group>
+                        <Form.Group className="col md-4" controlId="ToDuration">
+                          <Form.Label className="text-center">
+                            To
+                          </Form.Label>
+                          <Form.Control value={ToDuration} onChange={(e) => setToDuration(e.target.value)} type="date" />
+                        </Form.Group>
                       </div>
-                      <br/>
+                      <br />
 
                       <Form.Group className="mb-3" controlId="WhatFor">
                         <Form.Label className="text-center">
@@ -186,7 +160,7 @@ function App() {
                         </Form.Label>
                         <Form.Control value={Domain} onChange={(e) => setDomain(e.target.value)} type="text" placeholder="ex. Web Development, IOT, etc." />
                       </Form.Group>
-                      
+
                       <div className="d-grid">
                         <Button variant="primary" value="submitint" type="submit">
                           Submit

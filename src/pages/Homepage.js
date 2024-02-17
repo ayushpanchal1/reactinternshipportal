@@ -1,14 +1,14 @@
 
 import React from 'react'
 import { Col, Row, Container, Card, Form } from "react-bootstrap";
-import { Link} from "react-router-dom";
-import Navbar from './components/Navbar';
+import { Link } from "react-router-dom";
+import CNavbar from './components/CNavbar';
 
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <CNavbar />
       <Container style={{marginTop: '100px'}}>
         <Row className="d-flex justify-content-center align-items-center">
           <Col md={8} lg={10} xs={12}>

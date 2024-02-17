@@ -1,14 +1,14 @@
 
 import React from 'react'
 // import 'bootstrap/dist/css/bootstrap.css';
-import Navbar from './components/Navbar'; // Import the Navbar component
+import CNavbar from './components/CNavbar'; // Import the Navbar component
 import LoginForm from './components/LoginForm'; // Import the LoginForm component
 
 function App() {
 
   return (
     <div>
-      <Navbar /> {/* Use the Navbar component here */}
+      <CNavbar /> {/* Use the Navbar component here */}
       <LoginForm />
     </div>
   );

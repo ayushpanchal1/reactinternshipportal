@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { useSignOut } from 'react-auth-kit';
 import { useAuthUser } from 'react-auth-kit';
+import CNavbar from './components/CNavbar';
 
 function App() {
     const auth = useAuthUser()
@@ -88,38 +89,7 @@ function App() {
 
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand navbar-dark bg-primary">
-        <Link to="/admindashboard" className="navbar-brand">
-          &nbsp;Internship Management Portal
-        </Link>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to={"/admindashboard"} className="nav-link">
-              Dashboard
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/adminsearch"} className="nav-link">
-              Manage
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/adminpostnotifs"} className="nav-link">
-              Post
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/adminnotifs"} className="nav-link">
-              Notifications
-            </Link>
-          </li>
-          <li className="nav-item">
-            <button onClick={logout} className="nav-link">
-              Sign out
-            </button>
-          </li>
-        </div>
-      </nav>
+      <CNavbar />
 
       <br/><br/>
 

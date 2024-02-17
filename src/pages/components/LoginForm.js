@@ -36,6 +36,7 @@ function LoginForm() {
                 tokenType: "Bearer",
                 authState: { email: Email, session: "admin" },
             });
+            localStorage.setItem('SessionInfo', 'admin');
             alert("Admin Log in successful")
             navigate("/admindashboard")
         } else {
@@ -70,7 +71,8 @@ function LoginForm() {
                 tokenType: "Bearer",
                 authState: { email: Email, session: "user" },
             });
-            alert("Log in successful")
+            localStorage.setItem('SessionInfo', 'user');
+            // alert("Log in successful")
             navigate("/dashboard")
         } else {
             alert("Log in credentials are incorrect! Sign up if you do not have an account")
@@ -90,7 +92,7 @@ function LoginForm() {
                                 <div className="mb-3 mt-md-4">
                                     <h2 className="fw-bold mb-2 text-center text-uppercase ">
                                         {
-                                            location.pathname === '/Login' ? (<div>Log in</div>) : ( <div>Admin Log in</div>)
+                                            location.pathname === '/Login' ? (<div>Log in</div>) : (<div>Admin Log in</div>)
                                         }
                                     </h2>
                                     <div className="mb-3">
@@ -121,14 +123,14 @@ function LoginForm() {
                                                 </Button>
                                             </div>
                                         </Form>
-                                        {location.pathname === '/Login' ? ( <div className="mt-3">
+                                        {location.pathname === '/Login' ? (<div className="mt-3">
                                             <p className="mb-0  text-center">
                                                 Don't have an account?{" "}
                                                 <Link to={"/Register"} className="text-primary fw-bold">
                                                     Sign Up
                                                 </Link>
                                             </p>
-                                        </div> ) : ( <div></div>) }
+                                        </div>) : (<div></div>)}
                                     </div>
                                 </div>
                             </Card.Body>

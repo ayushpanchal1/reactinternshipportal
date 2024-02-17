@@ -1,5 +1,6 @@
 # Internship Management Portal
 Made using MERN stack
+Please make sure to select the most recently updated branch for the best experience
 
 # How to setup
 **Step 1:** Clone the repo
@@ -21,23 +22,29 @@ Made using MERN stack
 # Images
 
 ## Home
-![vFPBkjUq3I_GRf3z1PvF0](https://github.com/ayushpanchal1/internshipportal/assets/97223612/4860c8f3-c3f9-4f3c-a7b0-2a71f1acf6c8)
-![ylNUAOWXh2_LMr4PJUEzH](https://github.com/ayushpanchal1/internshipportal/assets/97223612/8871d11c-1534-4ec0-923a-5196846876e7)
-![XmBQi5L92n_CKoWzynUFp](https://github.com/ayushpanchal1/internshipportal/assets/97223612/e779fed3-11c0-4cff-a89a-3080e36dc60a)
-![A5n8lZQQkF_GEfsjP80yq](https://github.com/ayushpanchal1/internshipportal/assets/97223612/e89c1e58-b1eb-415c-a682-8ea82d44f23d)
+![firefox_FJjjE0CPeM](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/6b18e5ef-23dd-4e42-a871-0a39c05f9065)
+![firefox_TabviGAm6x](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/fe6158d5-a750-4509-b619-59e637f9f8ea)
+![firefox_ZRNZVtrmPj](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/f6290af8-2630-4aa7-87ef-7eed7ae90911)
+![firefox_PKCJA45hAE](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/a3b2fc87-12a8-4fb8-8975-4b5ac137e792)
 
 ## User Log In
-![el1oaKRw03_Jq8TM2Oh2j](https://github.com/ayushpanchal1/internshipportal/assets/97223612/782b2946-de1f-42d5-ab06-08c40f12450f)
-![GsDg2fZGDg_lGnUGx6RQj](https://github.com/ayushpanchal1/internshipportal/assets/97223612/4df02e07-bc72-4464-9ff7-64d75b653a8f)
-![MDTbMrMXYU_LAbORV7bOl](https://github.com/ayushpanchal1/internshipportal/assets/97223612/7b5d65b9-a549-411f-99e3-0d747eb59ce5)
-![I0F7s5j2oT_JMN34ApCpc](https://github.com/ayushpanchal1/internshipportal/assets/97223612/3a9de8d0-37e3-4b46-9f98-f239c7b429bd)
+![firefox_5yhRPCXK45](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/abfaca8a-20e3-486c-8cff-3b7cbbf0f7e5)
+![firefox_Q4G80RHaf0](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/c6226ce3-d4eb-493a-ace0-be780d66d14f)
+![firefox_scCnNI4Ec9](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/a11a74ce-482e-44c3-99f2-8cd0453ca210)
+![firefox_YIF8QpEE1f](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/8c3350ee-5015-47dc-81bf-355e47454f30)
+
 
 ## Admin Log In
-![E2fQQHzLsp_Dg5KypoRpW](https://github.com/ayushpanchal1/internshipportal/assets/97223612/c8de77b3-c77a-4430-8347-d84392c0c15b)
-![vz7yFwQQhw_KUMHRG3BUs](https://github.com/ayushpanchal1/internshipportal/assets/97223612/f09ab7a4-d08c-468f-9738-30b52bf79154)
-![x397wIsf3J_Kv5PDWj8tV](https://github.com/ayushpanchal1/internshipportal/assets/97223612/850b737a-062e-41b6-b866-a8e4a06be727)
-![cwALQYIIPa_SULO2sMF9b](https://github.com/ayushpanchal1/internshipportal/assets/97223612/75c376d2-88c9-4b8d-8073-ac32c5018e3c)
-![I0F7s5j2oT_JMN34ApCpc](https://github.com/ayushpanchal1/internshipportal/assets/97223612/b0a96522-a486-4b9b-bf5e-cbf0030ece4a)
+![firefox_6WnpWnjPUy](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/667b7352-70ea-4378-98c0-b1c7bd1b5b1a)
+![firefox_9juOkb4J7x](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/fe0fc91f-2698-4961-b353-f6dee94a03d9)
+![firefox_6M49xdlY10](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/a1e37c96-2456-4c48-8dff-02c184d0d47d)
+![firefox_d8ef2OwzDy](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/3492f738-be45-4fda-badf-c052da0a28ec)
+![firefox_kvQWiTuLVT](https://github.com/ayushpanchal1/reactinternshipportal/assets/97223612/e0bef70a-6637-4794-887a-53d87819902e)
+
+
+
+
+
 
 
 

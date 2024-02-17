@@ -2,35 +2,13 @@
 import React from 'react'
 import { Col, Row, Container, Card, Form } from "react-bootstrap";
 import { Link} from "react-router-dom";
+import Navbar from './components/Navbar';
 
 
 function App() {
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand navbar-dark bg-primary">
-        <Link to="/" className="navbar-brand">
-          &nbsp;Internship Management Portal
-        </Link>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to={"/Login"} className="nav-link">
-              Login
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/Register"} className="nav-link">
-              Signup
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/AdminLogin"} className="nav-link">
-              AdminLogin
-            </Link>
-          </li>
-        </div>
-      </nav>
-      <br/>
-
+      <Navbar />
       <Container style={{marginTop: '100px'}}>
         <Row className="d-flex justify-content-center align-items-center">
           <Col md={8} lg={10} xs={12}>

@@ -29,7 +29,7 @@ function App() {
 
   function logout() {
     signOut();
-    navigate("/login");
+    navigate("/Login");
   }
 
   useEffect(() => {
@@ -171,7 +171,7 @@ function App() {
                       </div>
                       <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
-                          <Modal.Title>Delete Internship report</Modal.Title>
+                          <Modal.Title style={{color: "#802121"}}>Delete Internship report</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>Are you sure you want to delete this?</Modal.Body>
                         <Modal.Footer>

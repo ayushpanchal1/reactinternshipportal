@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
-import { Container, Navbar, Nav } from "react-bootstrap"
-import { useSignOut, useAuthUser } from 'react-auth-kit';
+import { Container, Navbar, Nav, Modal, Button } from "react-bootstrap"
+import { useSignOut} from 'react-auth-kit';
 
 function CNavbar() {
   const Session = localStorage.getItem('SessionInfo');
   const signOut = useSignOut();
   const navigate = useNavigate();
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   function logout() {
     signOut();
@@ -85,11 +89,27 @@ function CNavbar() {
         </Nav>
         <Nav>
         {Session && (
-        <><li className="nav-item">
-            <button onClick={logout} className="nav-link">
-              Sign out
-            </button>
-          </li></>)}
+        <><li className="nav-item" style={{marginRight: "10px"}}>
+            <Button onClick={() => {handleShow()}} variant='info'>
+              Log out
+            </Button>
+          </li>
+          <Modal show={show} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title style={{color: "#802121"}}>Log Out</Modal.Title>
+                      </Modal.Header>
+                      
+                      <Modal.Body className=''>Are you sure you want to log out?</Modal.Body>
+                      <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                          Cancel
+                        </Button>
+                        <Button variant="primary" onClick={() => {logout()}}>
+                          Yes, Proceed
+                        </Button>
+                      </Modal.Footer>
+                    </Modal>
+                    </>)}
         </Nav>
       </Navbar>
     </Container>

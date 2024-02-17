@@ -33,7 +33,8 @@ function App() {
 
   function logout() {
     signOut();
-    navigate("/login");
+    navigate("/Login");
+    localStorage.removeItem("SessionInfo")
   }
 
   useEffect(() => {
@@ -181,7 +182,7 @@ function App() {
                     <div className="btn btn-primary" onClick={() => { handleShow(); setwfordelintern(intern.whatfor); }}>delete</div>
                     <Modal show={show} onHide={handleClose}>
                       <Modal.Header closeButton>
-                        <Modal.Title>Delete Internship report</Modal.Title>
+                        <Modal.Title style={{color: "#802121"}}>Delete Internship report</Modal.Title>
                       </Modal.Header>
                       <Modal.Body>Are you sure you want to delete this?</Modal.Body>
                       <Modal.Footer>

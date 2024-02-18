@@ -1,6 +1,5 @@
 
 import React from 'react'
-// import 'bootstrap/dist/css/bootstrap.css';
 import CNavbar from './components/CNavbar'; // Import the Navbar component
 import LoginForm from './components/LoginForm'; // Import the LoginForm component
 

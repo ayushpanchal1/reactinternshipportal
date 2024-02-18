@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Col, Button, Container, Card, Form, Modal } from "react-bootstrap";
+import { Col, Container, Card } from "react-bootstrap";
 import IMAGE from '../../media/user.png'
 
 function UserProfile(){

@@ -1,4 +1,4 @@
-import { Col, Button, Row, Container, Card, Form, Modal } from "react-bootstrap";
+import { Col, Container, Card } from "react-bootstrap";
 import { useState, useEffect } from 'react';
 import IMAGE from '../../media/user.png'
 

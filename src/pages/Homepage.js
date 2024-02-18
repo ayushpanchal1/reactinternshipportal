@@ -1,7 +1,6 @@
 
 import React from 'react'
-import { Col, Row, Container, Card, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Col, Row, Container, Card } from "react-bootstrap";
 import CNavbar from './components/CNavbar';
 
 

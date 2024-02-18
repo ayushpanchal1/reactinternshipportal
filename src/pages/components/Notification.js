@@ -1,4 +1,4 @@
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
+import { Col, Row, Container, Card, Form } from "react-bootstrap";
 import { useState, useEffect } from 'react';
 
 function Notification() {

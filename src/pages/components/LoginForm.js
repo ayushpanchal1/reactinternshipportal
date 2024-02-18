@@ -37,6 +37,7 @@ function LoginForm() {
                 authState: { email: Email, session: "admin" },
             });
             localStorage.setItem('SessionInfo', 'admin');
+            localStorage.setItem('SessionEmail', Email);
             alert("Admin Log in successful")
             navigate("/admindashboard")
         } else {
@@ -72,6 +73,7 @@ function LoginForm() {
                 authState: { email: Email, session: "user" },
             });
             localStorage.setItem('SessionInfo', 'user');
+            localStorage.setItem('SessionEmail', Email);
             // alert("Log in successful")
             navigate("/dashboard")
         } else {
@@ -126,7 +128,7 @@ function LoginForm() {
                                         {location.pathname === '/Login' ? (<div className="mt-3">
                                             <p className="mb-0  text-center">
                                                 Don't have an account?{" "}
-                                                <Link to={"/Register"} className="text-primary fw-bold">
+                                                <Link to={"/Signup"} className="text-primary fw-bold">
                                                     Sign Up
                                                 </Link>
                                             </p>

@@ -15,6 +15,7 @@ function CNavbar() {
   function logout() {
     signOut();
     localStorage.removeItem('SessionInfo');
+    localStorage.removeItem('SessionEmail');
     navigate("/Login");
   }
 

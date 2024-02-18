@@ -1,22 +1,20 @@
 
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
-import { Col, Button, Row, Container, Card, Form, Modal } from "react-bootstrap";
+import { Col, Button, Row, Container, Modal } from "react-bootstrap";
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSignOut } from 'react-auth-kit';
 import { useAuthUser } from 'react-auth-kit';
-import IMAGE from '../media/user.png'
 import CNavbar from './components/CNavbar';
+import AdminProfile from './components/AdminProfile';
 
 function App() {
   const auth = useAuthUser()
   const Email = auth().email
   const Session = auth().session
 
-  const [AdminData, setAdminData] = useState('')
   const [notifs, setnotifs] = useState('')
-  console.log(Session)
+  // console.log(Session)
 
   const [titledelnotif, settitledelnotif] = useState('')
 
@@ -30,34 +28,18 @@ function App() {
   function logout() {
     signOut();
     navigate("/Login");
+    localStorage.removeItem("SessionInfo");
+    localStorage.removeItem("SessionEmail");
   }
 
   useEffect(() => {
     //Runs on every render
-    getadmindata()
     getmynotifs()
     if (Session === "user") {
       logout()
     }
   }, []);
 
-  async function getadmindata() {
-    const response = await fetch('http://localhost:1337/api/getadmin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        Email
-      }),
-    })
-
-    const data = await response.json()
-
-    console.log(data)
-
-    setAdminData(data)
-  }
 
   async function getmynotifs() {
     //const stuname = `${FirstName} ${LastName}`
@@ -109,40 +91,7 @@ function App() {
   return (
     <div>
       <CNavbar />
-      <br /><br /><br />
-
-      <Container>
-        <Col md={8} lg={12} xs={12}>
-          <h1><b>Admin User</b></h1>
-          <div className='card shadow'>
-            <div className="d-flex">
-              <div className="border border-2 border-primary"></div>
-              <div className='col-md-3'>
-                <br />
-                <img class="media-object mw150" width="256" src={IMAGE} />
-              </div>
-
-              <div className='col-md-9'>
-                <br />
-                <h1>{AdminData.firstname} {AdminData.lastname}</h1>
-                <br />
-                <div className='d-flex'>
-                  <div className='col md-3'>
-                    <h4>First Name: {AdminData.firstname}</h4>
-                    <h4>Mobile Number: {AdminData.mobileno}</h4>
-                  </div>
-                  <div className='col md-3'>
-                    <h4>Last Name: {AdminData.lastname}</h4>
-                    <h4>Email: {Email}</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-        </Col>
-      </Container>
+      <AdminProfile />
 
       <br /><br />
 

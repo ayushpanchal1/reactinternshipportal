@@ -108,7 +108,7 @@ function App() {
         <Button variant="primary" id="button-addon2" value="searchq" type="submit">
           Search
         </Button>
-        <Button variant="secondary" id="button-addon2" onClick={() => {setsearchquery("");}} value="searchq" type="submit">
+        <Button variant="info" id="button-addon2" onClick={() => {setsearchquery("");}} value="searchq" type="submit">
           Clear
         </Button>
       </InputGroup>

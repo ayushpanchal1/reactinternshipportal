@@ -92,7 +92,7 @@ app.post('/api/adminlogin', async (req, res) => {
 
         if (admin) {
 
-            const jwttoken  = jwt.sign(
+            const jwttoken  = jwt.sign( 
                 {
                     name: admin.name,
                     email: admin.email,

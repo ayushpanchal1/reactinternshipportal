@@ -1,47 +1,21 @@
 
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
-import { useState } from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import { useSignIn } from 'react-auth-kit';
+import { Col, Row, Container, Card } from "react-bootstrap";
+import CNavbar from './components/CNavbar';
 
 
 function App() {
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand navbar-dark bg-primary">
-        <Link to="/" className="navbar-brand">
-          &nbsp;Internship Management Portal
-        </Link>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to={"/Login"} className="nav-link">
-              Login
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/Register"} className="nav-link">
-              Signup
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/AdminLogin"} className="nav-link">
-              AdminLogin
-            </Link>
-          </li>
-        </div>
-      </nav>
-      <br/>
-
-      <Container>
-        <Row className="vh-100 d-flex justify-content-center align-items-center">
+      <CNavbar />
+      <Container style={{marginTop: '100px'}}>
+        <Row className="d-flex justify-content-center align-items-center">
           <Col md={8} lg={10} xs={12}>
           <div className="border border-2 border-primary"></div>
             <Card className="shadow px-4">
               <h1><br/><b>Internship Management Portal</b></h1>
               <h2>
-                By Ayush, Pranjal and Yashi
+                By Ayush Panchal
                 <br/><br/><br/>
               </h2>
               <h2>

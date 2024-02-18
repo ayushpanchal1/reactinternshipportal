@@ -1,16 +1,15 @@
-
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
-import { Col, Button, Row, Container, Card, Form, InputGroup, FormGroup } from "react-bootstrap";
+import { Col, Button, Row, Container, Form, InputGroup } from "react-bootstrap";
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSignOut } from 'react-auth-kit';
 import { useAuthUser } from 'react-auth-kit';
 import IMAGE from '../media/user.png'
+import CNavbar from './components/CNavbar';
 
 function App() {
     const auth = useAuthUser()
-    const Email = auth().email
     const Session = auth().session
 
     const [userdata, setuserdata] = useState('')
@@ -87,42 +86,9 @@ function App() {
 
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand navbar-dark bg-primary">
-        <Link to="/admindashboard" className="navbar-brand">
-          &nbsp;Internship Management Portal
-        </Link>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to={"/admindashboard"} className="nav-link">
-              Dashboard
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/adminsearch"} className="nav-link">
-              Manage
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/adminpostnotifs"} className="nav-link">
-              Post
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/adminnotifs"} className="nav-link">
-              Notifications
-            </Link>
-          </li>
-          <li className="nav-item">
-            <button onClick={logout} className="nav-link">
-              Sign out
-            </button>
-          </li>
-        </div>
-      </nav>
-      <br/><br/><br/><br/><br/>
-
+      <CNavbar />
       
-      <Container>
+      <Container style={{ marginTop: '100px' }}>
       <Row className="d-flex justify-content-center align-items-center">
           <Col md={8} lg={6} xs={12}>
             <Form onSubmit={searchq}>
@@ -138,7 +104,7 @@ function App() {
         <Button variant="primary" id="button-addon2" value="searchq" type="submit">
           Search
         </Button>
-        <Button variant="secondary" id="button-addon2" onClick={() => {setsearchquery("");}} value="searchq" type="submit">
+        <Button variant="info" id="button-addon2" onClick={() => {setsearchquery("");}} value="searchq" type="submit">
           Clear
         </Button>
       </InputGroup>
@@ -147,12 +113,11 @@ function App() {
         </Row>
       
       </Container>
-      
 
-      {!userdata && (
-      <Container>
-      <br/><br/>
-      <Col md={8} lg={12} xs={12}> 
+
+      <Container style={{ marginTop: '48px' }}>
+      {!userdata && ( <>
+      <Col md={8} lg={12} xs={12} > 
       <h1><b>Students</b></h1>
       <div className="border border-2 border-primary"></div>
       <br/>
@@ -174,9 +139,8 @@ function App() {
         </div>))}
         <br/>
       </div>
-      </Col>
-      </Container>)}
-      
+      </Col></>)}
+      </Container>
       
 
       <Container>

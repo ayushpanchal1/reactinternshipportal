@@ -1,58 +1,26 @@
-//import logo from './logo.svg';
-//import './App.css';
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import { useSignOut } from 'react-auth-kit';
-import { useAuthUser } from 'react-auth-kit';
-import CNavbar from './components/CNavbar';
 
-function App() {
-    const auth = useAuthUser()
-    const Email = auth().email
-    const Session = auth().session
-
-    const [firstname, setFirstName] = useState('') 
-    const [lastname, setLastName] = useState('')
+function Notification() {
     var [notifs, setnotifs] = useState('')
-    //console.log(Email)
 
-    const signOut = useSignOut();
-    const navigate = useNavigate();
-
-    function logout() {
-        signOut();
-        navigate("/login");
-    }
-    
     useEffect(() => {
-      if(Session==="user"){
-        logout()
-      }
-      fetchnotif()
-    },[]);
+        fetchnotif()
+    }, []);
 
-
-      const fetchnotif = () => {
+    const fetchnotif = () => {
         fetch("http://localhost:1337/api/getnotifs")
-          .then(response => {
-            return response.json()
-          })
-          .then(data => {
-            data.reverse()
-            setnotifs(data)
-          })
-      }
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                data.reverse()
+                setnotifs(data)
+            })
+    }
 
-
-  return (
-    
-    <div>
-      <CNavbar />
-      <br/><br/><br/><br/>
-      <Container>
+    return (
+        <Container style={{ marginTop: '100px' }}>
         <Row className="d-flex">
           <Col md={8} lg={12} xs={12}>
           <div>
@@ -80,9 +48,7 @@ function App() {
           
         </Row>
       </Container>
-    </div>
-  );
+    )
 }
 
-export default App;
-
+export default Notification;

@@ -9,7 +9,6 @@ import SubmitInternship from './pages/SubmitInternship'
 import AdminDashboard from './pages/AdminDashboard'
 import AdminLogin from './pages/AdminLogin'
 import AdminPostNotifs from './pages/AdminPostNotifs'
-import AdminNotifs from './pages/AdminNotifs'
 import AdminSearch from './pages/AdminSearch'
 import { AuthProvider, RequireAuth } from 'react-auth-kit';
 
@@ -34,7 +33,6 @@ const App = () => {
           <Route path="/submitinternship" exact element={<RequireAuth loginPath='/Login'><SubmitInternship/></RequireAuth>} />
           <Route path="/admindashboard" exact element={<RequireAuth loginPath='/AdminLogin'><AdminDashboard/></RequireAuth>} />
           <Route path="/adminpostnotifs" exact element={<RequireAuth loginPath='/AdminLogin'><AdminPostNotifs/></RequireAuth>} />
-          <Route path="/adminnotifs" exact element={<RequireAuth loginPath='/AdminLogin'><AdminNotifs/></RequireAuth>} />
           <Route path="/adminsearch" exact element={<RequireAuth loginPath='/AdminLogin'><AdminSearch/></RequireAuth>} />
         </Routes>
         </BrowserRouter>

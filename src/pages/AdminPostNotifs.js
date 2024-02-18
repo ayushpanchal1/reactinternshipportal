@@ -91,9 +91,7 @@ function App() {
     <div>
       <CNavbar />
 
-      <br/><br/>
-
-      <Container>
+      <Container style={{ marginTop: '48px' }}>
         <Row className="vh-100 d-flex justify-content-center align-items-center">
           <Col md={8} lg={10} xs={12}>
           <div className="border border-2 border-primary"></div>

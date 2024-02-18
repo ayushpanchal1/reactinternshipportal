@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { Container, Navbar, Nav, Modal, Button } from "react-bootstrap"
-import { useSignOut} from 'react-auth-kit';
+import { useSignOut } from 'react-auth-kit';
 
 function CNavbar() {
   const Session = localStorage.getItem('SessionInfo');
@@ -25,13 +25,13 @@ function CNavbar() {
         <Navbar.Brand href="/" style={{ paddingLeft: "10px" }}>
           <img
             src="https://president.somaiya.edu.in/assets/oop/img/Homepage/Somaiya-logo-01.svg"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
+            width="40"
+            height="40"
+            className="d-inline-block align-center"
             alt="Logo"
             style={{ backgroundColor: "white" }}
           ></img>
-          &nbsp;Internship Management Portal
+          &nbsp; <b1>Internship Management Portal</b1>
         </Navbar.Brand>
         <Nav className="me-auto">
           {!Session && (
@@ -51,7 +51,7 @@ function CNavbar() {
                   AdminLogin
                 </Link>
               </li>
-            </>) }
+            </>)}
           {Session === 'user' && (<><li className="nav-item">
             <Link to={"/dashboard"} className="nav-link">
               Dashboard
@@ -67,50 +67,51 @@ function CNavbar() {
                 Notifications
               </Link>
             </li></>)}
-            {Session === 'admin' && (<><li className="nav-item">
+          {Session === 'admin' && (<><li className="nav-item">
             <Link to={"/admindashboard"} className="nav-link">
               Dashboard
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to={"/adminsearch"} className="nav-link">
-              Manage
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/adminpostnotifs"} className="nav-link">
-              Post
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/adminnotifs"} className="nav-link">
-              Notifications
-            </Link>
-          </li></>)}
+            <li className="nav-item">
+              <Link to={"/adminsearch"} className="nav-link">
+                Manage
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/adminpostnotifs"} className="nav-link">
+                Post
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/notifications"} className="nav-link">
+                Notifications
+              </Link>
+            </li></>)}
         </Nav>
         <Nav>
-        {Session && (
-        <><li className="nav-item" style={{marginRight: "10px"}}>
-            <Button onClick={() => {handleShow()}} variant='info'>
-              Log out
-            </Button>
-          </li>
-          <Modal show={show} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title style={{color: "#802121"}}>Log Out</Modal.Title>
-                      </Modal.Header>
-                      
-                      <Modal.Body className=''>Are you sure you want to log out?</Modal.Body>
-                      <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                          Cancel
-                        </Button>
-                        <Button variant="primary" onClick={() => {logout()}}>
-                          Yes, Proceed
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>
-                    </>)}
+          {Session && (
+            <>
+              <li className="nav-item" style={{ marginRight: "10px" }}>
+                <Button onClick={() => { handleShow() }} variant='info'>
+                  Log out
+                </Button>
+              </li>
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title style={{ color: "#802121" }}>Log Out</Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body className=''>Are you sure you want to log out?</Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Cancel
+                  </Button>
+                  <Button variant="primary" onClick={() => { logout() }}>
+                    Yes, Proceed
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+            </>)}
         </Nav>
       </Navbar>
     </Container>

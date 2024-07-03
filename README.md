@@ -1,5 +1,11 @@
+# NOTE
+This is an archived version of the project currently being developed for KJSIT. Click on the link below to go to the current in-development version.
+
+https://github.com/ayushpanchal1/internshipportal
+
 # Internship Management Portal
 Made using MERN stack
+
 Please make sure to select the most recently updated branch for the best experience
 
 # How to setup
